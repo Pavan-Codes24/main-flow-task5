@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LOGIN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url(image/img1.avif);
+            background-size: 1500px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        var user = "mainflow";
+        var password = "mainflow123";
+        
+        function loginPage(){
+            var us1 = document.getElementById("UN").value;
+            var ps1 = document.getElementById("PW").value;
+            var message = document.getElementById("message");
+
+            if(user === us1 && password === ps1){
+                window.location.href = "home.html"; // Redirect to home page
+            } else {
+                message.innerHTML = "Invalid Username/Password. Try again!";
+                message.className = "error";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="UN" placeholder="Enter Username">
+        <input type="password" id="PW" placeholder="Enter Password">
+        <button type="button" onclick="loginPage()">LOGIN</button>
+        <p id="message"></p>
+    </div>
+</body>
+</html>
